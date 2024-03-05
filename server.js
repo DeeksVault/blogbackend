@@ -6,7 +6,8 @@ const mongoose = require("mongoose")
 dotenv.config();
 
 
-const userRouter = require("./routes/user.router")
+const userRouter = require("./routes/user.router");
+const jobRouter = require("./routes/job.router")
 const connectDB = require("./config/dbconfig")
 
 const app = express();
@@ -22,7 +23,7 @@ app.get("/",(req , res)=>{
 })
 
 app.use("/api/user" , userRouter);
-
+app.use("/api/jobs" , jobRouter)
 
 
 mongoose.connection.once("open" , ()=>{
