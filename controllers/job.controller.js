@@ -39,8 +39,8 @@ const getAllJobs = async(req , res)=>{
 
 const getJob = async(req , res)=>{
     try{
-        const jobId = req.jobId;
-        const job = await Job.findById({jobId});
+        const jobId = req.params.id;
+        const job = await Job.findById(jobId);
         if(job){
             res.status(200).json(job);
         }

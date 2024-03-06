@@ -8,7 +8,7 @@ dotenv.config();
 
 const userRouter = require("./routes/user.router");
 const jobRouter = require("./routes/job.router");
-const jobApplyRoute = require("./router/jobapply.router");
+// const jobApplyRoute = require("./router/jobapply.router");
 
 const connectDB = require("./config/dbconfig")
 
@@ -26,7 +26,7 @@ app.get("/",(req , res)=>{
 
 app.use("/api/user" , userRouter);
 app.use("/api/jobs" , jobRouter)
-app.use("/api/applyjob" , jobApplyRoute)
+// app.use("/api/applyjob" , jobApplyRoute)
 
 mongoose.connection.once("open" , ()=>{
     console.log("connected to db");
