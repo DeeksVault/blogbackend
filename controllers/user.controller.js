@@ -3,6 +3,11 @@ const cryptojs = require("crypto-js");
 const jwt = require("jsonwebtoken")
 
 const signup = async (req , res)=>{
+    const email = req.body.email;
+    const user = User.find({email});
+    if(user){
+        res.send({message:"user already exists"});
+    }
     try{
         const newUser = new User({
             username:req.body.username,

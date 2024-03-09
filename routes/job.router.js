@@ -6,10 +6,10 @@ const { addJob, getAllJobs, getJob } = require("../controllers/job.controller");
 
 const router = express.Router();
 
-router.route("/addjob").post(addJob)
+router.route("/addjob").post(verifyuser , addJob)
 
-router.route("/alljobs").get(getAllJobs)
+router.route("/alljobs").get(verifyuser , getAllJobs)
 
-router.route("/:id").get(getJob)
+router.route("/:id").get(verifyuser , getJob)
 
 module.exports = router;
